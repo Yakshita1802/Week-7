@@ -42,20 +42,24 @@ head = _node1;
    return head;
 }
 
-void teardown(/*what parameter?*/) {
+void teardown(node_t * head) {
     //TODO: free all dynamic memory you requested.
     //Please complete the prototype of teardown.
     //You are not allowed to use globals
+if(head != NULL) 
+{
+teardown(head->next);
+free(head);
+}
 }
 
 void dump_all(node_t*);
 int main (int argc, char ** argv) {
     node_t * head = setup();
     dump_all(head);
-    teardown(/*what argument?*/);
+    teardown(head);
     return 0;
 }
-
 void dump_all(node_t * head) {
     printf("head -> ");
     node_t * cur = head;
