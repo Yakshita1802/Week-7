@@ -25,22 +25,22 @@ char* convert_2(int dec)
     if(_chunks == 0 ) 
     {    
     	_blocks[_index] = 	' '; // inserts a space if a 4 bit chunk is complete
-	  }
-		else 
+    }
+	  else 
     {
-			// uses the and operator to determine whether the LSB is 1 or 0.
+	// uses the and operator to determine whether the LSB is 1 or 0.
 	  if(dec&1) 
     {  
-			_blocks[_index] = 	'1';
-		}
-		else 
+		  _blocks[_index] = 	'1';
+    }
+	  else 
     {
-			_blocks[_index] = 	'0';
-		}
-	        // The decimal is right-shifted by 1
-	        // When it is 1101, it is 110
+		_blocks[_index] = 	'0';
+    }
+	    // The decimal is right-shifted by 1
+	    // When it is 1101, it is 110
 	  dec >>= 1;	
-		} 
+    } 
 	  _index--;  // Decrement by 1
 	  _chunks = (_chunks + 1)%5;  // increaments chunks 0 to 4 first start with 1
     }
