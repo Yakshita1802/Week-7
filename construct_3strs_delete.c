@@ -86,10 +86,10 @@ void delete_node_key(node_t **head, char * key) {
 node_t *_head = *head;
 node_t *_teardown = _head;
 while(_head){
-//printf("match - %d ",strcmp(h->str,key));
+
 if(strcmp(_head->str,key)==0){
 
-if(_teardown == _head){ // key is found at head....
+if(_teardown == _head){ 
 *head = (_head->next);
 free(_head);
 }
@@ -103,9 +103,8 @@ _head = _head->next;
 
 }
 }
-
-// to test
-void print(node_t *head){
+void print(node_t *head)
+{
 int i = 0;
 while(head){
 printf("%d %s \n",i++,head->str);
