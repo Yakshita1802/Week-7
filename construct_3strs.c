@@ -11,14 +11,17 @@ node_t;
 
 node_t * construct_3_strs() {
     //return NULL;//Your code here. Currently return NULL just to pass compiler, please edit as needed.
+	
   //I establish three distinct nodes and use malloc to dynamically allocate memory.
 node_t* x = (node_t*)malloc(sizeof(node_t));
 node_t* y = (node_t*)malloc(sizeof(node_t));
 node_t* z = (node_t*)malloc(sizeof(node_t));
+	
 //I give each of the three nodes its respective values.
 x->value = "CS604";
 y->value = "is";
 z->value = "awesome";
+	
 //I set the.next field to point to the proper Node using pointer assignment.
 x->next = y;
 y->next = z;
